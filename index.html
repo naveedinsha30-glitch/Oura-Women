@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#8d315c">
+<meta name="description" content="OURA WOMEN — discover beautiful fashion, accessories and everyday favourites.">
+<title>OURA WOMEN | Discover Your Style</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<style>
+:root{--plum:#823253;--rose:#b85d7d;--pink:#f8e9ef;--cream:#fffaf8;--ink:#29232a;--muted:#817780;--line:#eee3e8;--white:#fff;--shadow:0 12px 35px #54233a12}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--cream);color:var(--ink);font-family:"DM Sans",sans-serif}button,input,textarea,select{font:inherit}button,a{ -webkit-tap-highlight-color:transparent}a{color:inherit;text-decoration:none}.topline{background:#54243b;color:#fff;text-align:center;padding:8px 12px;font-size:11px;letter-spacing:1.4px}.header{background:#fff;position:sticky;top:0;z-index:20;box-shadow:0 3px 20px #3c1d2b0b}.headin{max-width:1200px;margin:auto;padding:17px 22px;display:flex;align-items:center;gap:24px}.brand{font:700 29px "Playfair Display",serif;letter-spacing:2px;color:var(--plum);white-space:nowrap}.brand small{display:block;font:600 9px "DM Sans";letter-spacing:4px;text-align:center;color:#a47a8a;margin-top:1px}.search{flex:1;display:flex;border:1px solid #eadbe2;border-radius:30px;overflow:hidden;background:#fff}.search input{border:0;outline:0;padding:13px 18px;width:100%;min-width:0}.search button{border:0;background:var(--plum);color:white;padding:0 22px;cursor:pointer}.headlinks{font-size:12px;color:var(--muted);white-space:nowrap}.hero{max-width:1200px;margin:22px auto 0;padding:0 22px}.hero-box{min-height:310px;border-radius:22px;overflow:hidden;background:linear-gradient(105deg,#f6e4eb 0%,#f6e4ebd9 48%,#ead0dc55),url('https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1600&q=85') center 42%/cover;display:flex;align-items:center;padding:48px 7%}.hero-copy{max-width:440px}.eyebrow{font-size:11px;letter-spacing:3px;color:var(--plum);font-weight:700}.hero h1{font:600 clamp(35px,5vw,58px)/1.08 "Playfair Display",serif;color:#54243b;margin:13px 0}.hero p{color:#6c5360;line-height:1.7;max-width:370px}.primary{display:inline-block;border:0;border-radius:25px;background:var(--plum);color:#fff;padding:13px 23px;font-weight:700;font-size:12px;cursor:pointer}.section{max-width:1200px;margin:40px auto;padding:0 22px}.section-head{display:flex;align-items:end;justify-content:space-between;gap:12px;margin-bottom:18px}.section h2{font:600 29px "Playfair Display",serif;margin:0;color:#49283a}.sub{font-size:12px;color:var(--muted);margin-top:5px}.categories{display:grid;grid-template-columns:repeat(6,1fr);gap:12px}.cat{background:#fff;border:1px solid var(--line);border-radius:15px;padding:18px 8px;text-align:center;cursor:pointer;transition:.2s}.cat:hover,.cat.active{border-color:#c47a96;background:#fff5f8;transform:translateY(-2px)}.cat .emoji{font-size:26px;display:block;margin-bottom:8px}.cat strong{font-size:12px}.toolbar{display:flex;gap:10px;align-items:center;flex-wrap:wrap}.toolbar select{border:1px solid var(--line);background:#fff;padding:10px 12px;border-radius:10px;color:#5f4c57}.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}.product{background:#fff;border:1px solid #f0e7eb;border-radius:15px;overflow:hidden;box-shadow:0 5px 20px #54233a08;transition:.2s}.product:hover{transform:translateY(-4px);box-shadow:var(--shadow)}.media{height:260px;background:#f7edf1;position:relative;overflow:hidden}.media img,.media video{width:100%;height:100%;object-fit:cover;display:block}.media .count{position:absolute;bottom:10px;right:10px;background:#fffdf0e8;border-radius:20px;padding:5px 9px;font-size:10px}.pbody{padding:14px}.tag{font-size:10px;color:var(--rose);font-weight:700;text-transform:uppercase;letter-spacing:1px}.pname{font-size:14px;font-weight:600;margin:7px 0;line-height:1.4;min-height:39px}.prices{display:flex;align-items:center;gap:8px;margin:8px 0 13px}.new{font-size:18px;font-weight:700;color:var(--plum)}.old{font-size:12px;color:#9e9299;text-decoration:line-through}.off{font-size:10px;color:#27835c;background:#e9f6ef;padding:4px 6px;border-radius:5px}.shopbtn{display:block;text-align:center;background:#f6e8ee;color:#77304f;border-radius:8px;padding:10px;font-size:11px;font-weight:700}.empty{grid-column:1/-1;text-align:center;padding:45px 15px;color:var(--muted);background:#fff;border-radius:14px}.footer{margin-top:55px;background:#49283a;color:#f8eaf0;padding:35px 22px;text-align:center}.footer b{font:600 24px "Playfair Display"}.footer p{font-size:11px;line-height:1.7;color:#e4cbd6}.disclosure{font-size:10px;color:#c9aab9}.manager-launch{position:fixed;right:12px;bottom:12px;z-index:40;background:#fff;color:#fff;border:0;width:1px;height:1px;overflow:hidden;opacity:.01}.manager-launch:focus{width:auto;height:auto;opacity:1;background:var(--plum);padding:10px;border-radius:20px}
+.overlay{display:none;position:fixed;inset:0;background:#21121dcc;z-index:50;overflow:auto;padding:18px}.overlay.show{display:block}.panel{max-width:900px;margin:20px auto;background:#fff;border-radius:18px;padding:22px;box-shadow:0 20px 80px #0004}.paneltop{display:flex;justify-content:space-between;align-items:center;gap:12px;border-bottom:1px solid var(--line);padding-bottom:14px}.panel h2{font:600 25px "Playfair Display";margin:0;color:var(--plum)}.close{border:0;background:#f7edf1;border-radius:50%;width:36px;height:36px;font-size:20px;cursor:pointer}.notice{background:#fff5e8;border:1px solid #f2dfbd;color:#76552d;padding:12px;border-radius:10px;font-size:12px;line-height:1.5;margin:15px 0}.formgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.field{display:flex;flex-direction:column;gap:6px}.field.full{grid-column:1/-1}.field label{font-size:11px;font-weight:700;color:#66515d}.field input,.field textarea,.field select{border:1px solid #e8dce2;border-radius:9px;padding:11px;outline-color:#bd7894;width:100%;background:#fff}.field textarea{min-height:78px;resize:vertical}.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}.secondary{border:1px solid #e4d4dc;background:#fff;color:#67334d;border-radius:9px;padding:10px 14px;font-size:12px;font-weight:700;cursor:pointer}.danger{background:#fff0f0;color:#a42f3c;border-color:#f1d1d4}.status{font-size:12px;margin:10px 0;color:#6d5662;white-space:pre-wrap}.product-admin{display:flex;align-items:center;gap:12px;border:1px solid var(--line);padding:9px;border-radius:10px;margin-top:8px}.product-admin img{width:48px;height:55px;object-fit:cover;border-radius:7px}.product-admin .meta{flex:1;min-width:0;font-size:12px}.product-admin .meta span{display:block;color:var(--muted);font-size:10px;margin-top:4px}.hidden{display:none!important}.hint{font-size:10px;color:#8d7d85;line-height:1.5}.divider{height:1px;background:var(--line);margin:20px 0}
+@media(max-width:800px){.grid{grid-template-columns:repeat(3,minmax(0,1fr))}.media{height:220px}.categories{grid-template-columns:repeat(3,1fr)}.headin{gap:12px}.headlinks{display:none}}
+@media(max-width:560px){.headin{padding:12px;flex-wrap:wrap}.brand{font-size:23px}.search{order:3;flex-basis:100%}.hero{padding:0 12px;margin-top:12px}.hero-box{min-height:290px;padding:27px 22px;background-position:58% center}.hero-copy{max-width:260px}.hero p{font-size:12px}.section{padding:0 12px;margin:30px auto}.section h2{font-size:25px}.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.media{height:205px}.pbody{padding:10px}.pname{font-size:12px}.new{font-size:16px}.categories{gap:8px}.cat{padding:14px 5px}.panel{padding:15px;margin:0 auto}.overlay{padding:8px}.formgrid{grid-template-columns:1fr}.field.full{grid-column:auto}.product-admin{gap:8px}.product-admin button{padding:8px;font-size:10px}}
+</style>
+</head>
+<body>
+<div class="topline">A LITTLE MORE STYLE, A LITTLE MORE YOU · OURA WOMEN</div>
+<header class="header"><div class="headin">
+  <a class="brand" href="#">OURA WOMEN<small>STYLE • BEAUTY • EVERYDAY</small></a>
+  <form class="search" id="searchForm"><input id="searchInput" type="search" placeholder="Search dresses, maxi, watches..." aria-label="Search products"><button type="submit">Search</button></form>
+  <div class="headlinks">Curated finds for her ♡</div>
+</div></header>
+<main>
+<section class="hero"><div class="hero-box"><div class="hero-copy"><div class="eyebrow">THE OURA EDIT</div><h1>Find your kind of beautiful.</h1><p>Discover lovely fashion, accessories and everyday favourites — all in one place.</p><a class="primary" href="#shop">EXPLORE COLLECTION</a></div></div></section>
+<section class="section"><div class="section-head"><div><h2>Shop by category</h2><div class="sub">Find exactly what you are looking for</div></div></div><div class="categories" id="categories">
+  <button class="cat active" data-cat="All"><span class="emoji">✧</span><strong>All items</strong></button>
+  <button class="cat" data-cat="Dresses"><span class="emoji">👗</span><strong>Dresses</strong></button>
+  <button class="cat" data-cat="Beauty"><span class="emoji">🌷</span><strong>Beauty</strong></button>
+  <button class="cat" data-cat="Watches"><span class="emoji">⌚</span><strong>Watches</strong></button>
+  <button class="cat" data-cat="Bags"><span class="emoji">👜</span><strong>Bags</strong></button>
+  <button class="cat" data-cat="Jewellery"><span class="emoji">💎</span><strong>Jewellery</strong></button>
+  <button class="cat" data-cat="Shoes"><span class="emoji">👠</span><strong>Shoes</strong></button>
+  <button class="cat" data-cat="Clothing"><span class="emoji">🧥</span><strong>Clothing</strong></button>
+  <button class="cat" data-cat="Accessories"><span class="emoji">🎀</span><strong>Accessories</strong></button>
+  <button class="cat" data-cat="Home"><span class="emoji">🕯️</span><strong>Home</strong></button>
+  <button class="cat" data-cat="Other"><span class="emoji">♡</span><strong>Other</strong></button>
+  <button class="cat" data-cat="Sale"><span class="emoji">％</span><strong>Sale picks</strong></button>
+</div></section>
+<section class="section" id="shop"><div class="section-head"><div><h2 id="listingTitle">Lovely finds for you</h2><div class="sub" id="resultCount">Browse our latest picks</div></div><div class="toolbar"><select id="sortSelect" aria-label="Sort products"><option value="newest">Newest</option><option value="low">Price: low to high</option><option value="high">Price: high to low</option></select></div></div><div class="grid" id="productGrid"><div class="empty">Beautiful finds are being added soon. Please visit again ♡</div></div></section>
+</main>
+<footer class="footer"><b>OURA WOMEN</b><p>Thoughtfully selected finds to make everyday style feel special.</p><div class="disclosure">Affiliate disclosure: Some product links may earn us a commission at no extra cost to you. Product purchases and delivery are handled by the linked retailer.</div></footer>
+
+<!-- Store Manager is intentionally not linked from the public storefront. Open it with the private keyboard shortcut Ctrl + Shift + M, or add #manager to the URL. Access is still protected by Supabase login and database security rules. -->
+<div class="overlay" id="managerOverlay"><div class="panel">
+ <div class="paneltop"><h2>OURA WOMEN · Store Manager</h2><button class="close" id="closeManager" aria-label="Close">×</button></div>
+ <div id="setupArea">
+  <div class="notice"><b>One-time connection setup</b><br>Enter your Supabase Project URL and anon/public key below. These are browser-safe keys; never paste a service_role/secret key here. Save this HTML after adding them in the code section marked SUPABASE CONFIG.</div>
+  <div class="formgrid">
+   <div class="field full"><label>Supabase Project URL</label><input id="projectUrl" placeholder="https://your-project.supabase.co"></div>
+   <div class="field full"><label>Supabase anon / publishable key</label><input id="anonKey" placeholder="sb_publishable_... or legacy anon key"></div>
+  </div>
+  <div class="actions"><button class="primary" id="connectBtn">Connect Supabase</button></div>
+  <div class="hint">For a permanent setup, put these two values into the SUPABASE CONFIG constants in this file. The public storefront never displays this manager panel.</div>
+ </div>
+ <div id="loginArea" class="hidden">
+  <div class="notice">Private owner sign-in. Only the account allowed by your Supabase Row Level Security (RLS) policies can manage products.</div>
+  <div class="formgrid"><div class="field"><label>Owner email</label><input id="loginEmail" type="email" autocomplete="username" placeholder="Your email"></div><div class="field"><label>Password</label><input id="loginPassword" type="password" autocomplete="current-password" placeholder="Your password"></div></div>
+  <div class="actions"><button class="primary" id="loginBtn">Sign in securely</button></div>
+ </div>
+ <div id="adminArea" class="hidden">
+  <div class="notice">Signed in. Add a product below. Upload multiple photos and videos; add one affiliate URL per product. Publish when ready.</div>
+  <div class="formgrid">
+   <div class="field"><label>Product name *</label><input id="pTitle" placeholder="e.g. Elegant printed maxi dress"></div>
+   <div class="field"><label>Category *</label><select id="pCategory"><option>Dresses</option><option>Beauty</option><option>Watches</option><option>Bags</option><option>Jewellery</option><option>Shoes</option><option>Clothing</option><option>Accessories</option><option>Home</option><option>Other</option></select></div>
+   <div class="field"><label>New price (PKR) *</label><input id="pNew" type="number" min="0" step="1" placeholder="2499"></div>
+   <div class="field"><label>Old price (PKR)</label><input id="pOld" type="number" min="0" step="1" placeholder="3999"></div>
+   <div class="field full"><label>Description</label><textarea id="pDescription" placeholder="Product details, fabric, features..."></textarea></div>
+   <div class="field full"><label>Daraz affiliate link *</label><input id="pAffiliate" type="url" placeholder="https://s.daraz.pk/..."></div>
+   <div class="field full"><label>Product photos and videos (select multiple)</label><input id="pMedia" type="file" accept="image/*,video/*" multiple><div class="hint">You can select many pictures and videos together. They upload to your Supabase Storage bucket named <b>oura-media</b>.</div></div>
+   <div class="field"><label>Visibility</label><select id="pPublished"><option value="true">Publish on website</option><option value="false">Keep as draft</option></select></div>
+  </div>
+  <div class="actions"><button class="primary" id="saveProduct">Save product</button><button class="secondary" id="resetForm">Clear form</button><button class="secondary" id="refreshProducts">Refresh list</button><button class="secondary danger" id="logoutBtn">Sign out</button></div>
+  <div class="status" id="adminStatus" role="status"></div>
+  <div class="divider"></div><h3 style="font:600 20px 'Playfair Display';color:#54243b">Your products</h3><div id="adminProducts"></div>
+ </div>
+ <div id="sqlArea" class="hidden">
+  <div class="divider"></div><h3 style="font:600 18px 'Playfair Display';color:#54243b">Supabase security setup (run once)</h3>
+  <p class="hint">In Supabase → SQL Editor, create the table and policies below. Replace YOUR_OWNER_AUTH_USER_UUID with your own user ID from Authentication → Users. Create a Storage bucket named <b>oura-media</b> and set it to Public so published product media can be displayed. The database write rules below remain owner-only.</p>
+  <textarea id="sqlText" readonly style="width:100%;min-height:300px;font:11px monospace;border:1px solid #e8dce2;border-radius:8px;padding:10px"></textarea>
+  <button class="secondary" id="copySql">Copy SQL</button>
+ </div>
+ </div></div>
+<script>
+// ===================== SUPABASE CONFIG =====================
+// Add your Supabase Project URL and anon/publishable key here.
+// NEVER use a service_role or secret key in a public HTML file.
+const SUPABASE_URL = "PASTE_YOUR_SUPABASE_PROJECT_URL_HERE";
+const SUPABASE_ANON_KEY = "PASTE_YOUR_SUPABASE_ANON_KEY_HERE";
+const TABLE = "oura_products";
+const BUCKET = "oura-media";
+// ============================================================
+let sb=null, products=[], editingId=null, mediaItems=[];
+const $=id=>document.getElementById(id);
+const money=n=>new Intl.NumberFormat("en-PK",{style:"currency",currency:"PKR",maximumFractionDigits:0}).format(Number(n||0));
+const safe=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+function configReady(){return SUPABASE_URL.startsWith("https://")&&!SUPABASE_URL.includes("PASTE_")&&SUPABASE_ANON_KEY.length>20&&!SUPABASE_ANON_KEY.includes("PASTE_")}
+function initClient(url,key){if(!window.supabase){throw new Error("Supabase library could not load. Check your internet connection.")}sb=window.supabase.createClient(url,key);return sb}
+function showManager(){ $("managerOverlay").classList.add("show"); $("sqlArea").classList.remove("hidden"); $("sqlText").value=sqlSetup; if(!sb&&configReady()){try{initClient(SUPABASE_URL,SUPABASE_ANON_KEY);$("setupArea").classList.add("hidden");$("loginArea").classList.remove("hidden")}catch(e){status(e.message)}}}
+function closeManager(){ $("managerOverlay").classList.remove("show") }
+function status(t){$("adminStatus").textContent=t}
+document.addEventListener("keydown",e=>{if(e.ctrlKey&&e.shiftKey&&e.key.toLowerCase()==="m")showManager()});
+if(location.hash==="#manager")showManager();
+$("closeManager").onclick=closeManager;
+$("managerOverlay").addEventListener("click",e=>{if(e.target===$("managerOverlay"))closeManager()});
+$("connectBtn").onclick=()=>{try{initClient($("projectUrl").value.trim(),$("anonKey").value.trim());$("setupArea").classList.add("hidden");$("loginArea").classList.remove("hidden");$("sqlArea").classList.remove("hidden")}catch(e){alert(e.message)}};
+$("loginBtn").onclick=async()=>{try{if(!sb)throw new Error("Connect Supabase first.");const {error}=await sb.auth.signInWithPassword({email:$("loginEmail").value.trim(),password:$("loginPassword").value});if(error)throw error;$("loginArea").classList.add("hidden");$("adminArea").classList.remove("hidden");await loadAdmin()}catch(e){alert("Sign-in failed: "+e.message)}};
+$("logoutBtn").onclick=async()=>{if(sb)await sb.auth.signOut();$("adminArea").classList.add("hidden");$("loginArea").classList.remove("hidden");$("loginPassword").value=""};
+$("refreshProducts").onclick=loadAdmin;
+$("resetForm").onclick=resetForm;
+$("saveProduct").onclick=saveProduct;
+$("copySql").onclick=()=>{navigator.clipboard?.writeText(sqlSetup).then(()=>alert("SQL copied.")).catch(()=>alert("Please select and copy the SQL manually."))};
+const sqlSetup=`create table if not exists public.oura_products (
+ id uuid primary key default gen_random_uuid(),
+ title text not null,
+ description text default '',
+ category text not null,
+ old_price numeric,
+ new_price numeric not null,
+ affiliate_url text not null,
+ media jsonb not null default '[]'::jsonb,
+ published boolean not null default false,
+ created_at timestamptz not null default now(),
+ updated_at timestamptz not null default now()
+);
+alter table public.oura_products enable row level security;
+-- Replace the UUID below with YOUR authenticated user UUID.
+create policy "Public can read published products" on public.oura_products for select using (published = true);
+create policy "Owner can read all products" on public.oura_products for select to authenticated using (auth.uid() = 'YOUR_OWNER_AUTH_USER_UUID'::uuid);
+create policy "Owner can insert products" on public.oura_products for insert to authenticated with check (auth.uid() = 'YOUR_OWNER_AUTH_USER_UUID'::uuid);
+create policy "Owner can update products" on public.oura_products for update to authenticated using (auth.uid() = 'YOUR_OWNER_AUTH_USER_UUID'::uuid) with check (auth.uid() = 'YOUR_OWNER_AUTH_USER_UUID'::uuid);
+create policy "Owner can delete products" on public.oura_products for delete to authenticated using (auth.uid() = 'YOUR_OWNER_AUTH_USER_UUID'::uuid);
+-- Storage bucket: create a PUBLIC bucket named oura-media in Storage.
+-- Then run these policies after replacing the UUID:
+create policy "Public can view OURA media" on storage.objects for select using (bucket_id = 'oura-media');
+create policy "Owner can upload OURA media" on storage.objects for insert to authenticated with check (bucket_id = 'oura-media' and auth.uid() = 'YOUR_OWNER_AUTH_USER_UUID'::uuid);
+create policy "Owner can update OURA media" on storage.objects for update to authenticated using (bucket_id = 'oura-media' and auth.uid() = 'YOUR_OWNER_AUTH_USER_UUID'::uuid);
+create policy "Owner can delete OURA media" on storage.objects for delete to authenticated using (bucket_id = 'oura-media' and auth.uid() = 'YOUR_OWNER_AUTH_USER_UUID'::uuid);`;
+async function loadPublic(){try{if(!sb&&configReady())initClient(SUPABASE_URL,SUPABASE_ANON_KEY);if(!sb)return;const {data,error}=await sb.from(TABLE).select("*").eq("published",true).order("created_at",{ascending:false});if(error)throw error;products=data||[];renderProducts()}catch(e){console.warn(e);$("productGrid").innerHTML='<div class="empty">Store connection is not configured yet. The owner can open Store Manager to connect it.</div>'}}
+async function loadAdmin(){try{status("Loading your products…");const {data,error}=await sb.from(TABLE).select("*").order("created_at",{ascending:false});if(error)throw error;products=data||[];renderAdmin();renderProducts();status("Loaded "+products.length+" products.")}catch(e){status("Could not load products: "+e.message+" — check that the SQL setup and owner UUID are correct.")}}
+function firstImage(p){const m=Array.isArray(p.media)?p.media:[];const x=m.find(a=>a.type==="image");return x?.url||"https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=600&q=80"}
+function renderProducts(){const q=$("searchInput").value.trim().toLowerCase(),cat=document.querySelector(".cat.active")?.dataset.cat||"All",sort=$("sortSelect").value;let list=products.filter(p=>p.published!==false);if(cat!=="All"&&cat!=="Sale")list=list.filter(p=>(p.category||"").toLowerCase()===cat.toLowerCase());if(cat==="Sale")list=list.filter(p=>Number(p.old_price)>Number(p.new_price));if(q)list=list.filter(p=>[p.title,p.description,p.category].join(" ").toLowerCase().includes(q));if(sort==="low")list.sort((a,b)=>a.new_price-b.new_price);if(sort==="high")list.sort((a,b)=>b.new_price-a.new_price);if(sort==="newest")list.sort((a,b)=>new Date(b.created_at)-new Date(a.created_at));$("listingTitle").textContent=q?`Search: “${q}”`:cat==="All"?"Lovely finds for you":cat;$("resultCount").textContent=`${list.length} product${list.length===1?"":"s"} found`;const grid=$("productGrid");if(!list.length){grid.innerHTML='<div class="empty">No products found. Try another search or category ♡</div>';return}grid.innerHTML=list.map(p=>{const m=Array.isArray(p.media)?p.media:[],img=firstImage(p),off=p.old_price&&p.old_price>p.new_price?Math.round((1-p.new_price/p.old_price)*100):0;return `<article class="product"><div class="media"><img loading="lazy" src="${safe(img)}" alt="${safe(p.title)}">${m.length>1?`<span class="count">${m.length} media</span>`:""}</div><div class="pbody"><div class="tag">${safe(p.category||"OURA PICK")}</div><div class="pname">${safe(p.title)}</div><div class="prices"><span class="new">${money(p.new_price)}</span>${p.old_price?`<span class="old">${money(p.old_price)}</span>`:""}${off?`<span class="off">${off}% OFF</span>`:""}</div><a class="shopbtn" href="${safe(p.affiliate_url)}" target="_blank" rel="nofollow sponsored noopener">VIEW DEAL ON DARAZ ↗</a></div></article>`}).join("")}
+function renderAdmin(){const host=$("adminProducts");if(!products.length){host.innerHTML='<p class="hint">No products yet. Add your first product above.</p>';return}host.innerHTML=products.map(p=>`<div class="product-admin"><img src="${safe(firstImage(p))}" alt=""><div class="meta"><b>${safe(p.title)}</b><span>${safe(p.category)} · ${money(p.new_price)} · ${p.published?"Published":"Draft"}</span></div><button class="secondary" data-edit="${p.id}">Edit</button><button class="secondary danger" data-delete="${p.id}">Delete</button></div>`).join("");host.querySelectorAll("[data-edit]").forEach(b=>b.onclick=()=>editProduct(b.dataset.edit));host.querySelectorAll("[data-delete]").forEach(b=>b.onclick=()=>deleteProduct(b.dataset.delete))}
+async function saveProduct(){try{if(!sb)throw new Error("Supabase is not connected.");const title=$("pTitle").value.trim(),category=$("pCategory").value,newPrice=Number($("pNew").value),oldPrice=$("pOld").value?Number($("pOld").value):null,affiliate=$("pAffiliate").value.trim();if(!title||!newPrice||!affiliate)throw new Error("Product name, new price and affiliate link are required.");if(!/^https?:\/\//i.test(affiliate))throw new Error("Please enter a valid affiliate URL.");const btn=$("saveProduct");btn.disabled=true;status("Uploading selected media…");let media=mediaItems.slice();const files=Array.from($("pMedia").files||[]);for(const file of files){const path=`${Date.now()}-${Math.random().toString(36).slice(2)}-${file.name.replace(/[^a-zA-Z0-9._-]/g,"_")}`;const {error}=await sb.storage.from(BUCKET).upload(path,file,{upsert:false,contentType:file.type});if(error)throw error;const {data}=sb.storage.from(BUCKET).getPublicUrl(path);media.push({url:data.publicUrl,type:file.type.startsWith("video/")?"video":"image",name:file.name})}const row={title,category,new_price:newPrice,old_price:oldPrice,description:$("pDescription").value.trim(),affiliate_url:affiliate,media,published:$("pPublished").value==="true",updated_at:new Date().toISOString()};let result;if(editingId)result=await sb.from(TABLE).update(row).eq("id",editingId);else result=await sb.from(TABLE).insert(row);if(result.error)throw result.error;status("Product saved successfully.");resetForm();await loadAdmin()}catch(e){status("Save failed: "+e.message)}finally{$("saveProduct").disabled=false}}
+function editProduct(id){const p=products.find(x=>x.id===id);if(!p)return;editingId=id;$("pTitle").value=p.title||"";$("pCategory").value=p.category||"Other";$("pNew").value=p.new_price||"";$("pOld").value=p.old_price||"";$("pDescription").value=p.description||"";$("pAffiliate").value=p.affiliate_url||"";$("pPublished").value=String(!!p.published);mediaItems=Array.isArray(p.media)?p.media.slice():[];$("pMedia").value="";$("saveProduct").textContent="Update product";status("Editing: "+p.title+" — existing media will be kept; newly selected files will be added.");window.scrollTo({top:0,behavior:"smooth"})}
+async function deleteProduct(id){if(!confirm("Delete this product from OURA WOMEN?"))return;try{const {error}=await sb.from(TABLE).delete().eq("id",id);if(error)throw error;await loadAdmin();status("Product deleted.")}catch(e){status("Delete failed: "+e.message)}}
+function resetForm(){editingId=null;mediaItems=[];["pTitle","pNew","pOld","pDescription","pAffiliate","pMedia"].forEach(id=>$(id).value="");$("pPublished").value="true";$("saveProduct").textContent="Save product"}
+document.querySelectorAll(".cat").forEach(b=>b.addEventListener("click",()=>{document.querySelectorAll(".cat").forEach(x=>x.classList.remove("active"));b.classList.add("active");renderProducts();$("shop").scrollIntoView({behavior:"smooth"})}));
+$("searchForm").onsubmit=e=>{e.preventDefault();renderProducts();$("shop").scrollIntoView({behavior:"smooth"})};
+$("searchInput").addEventListener("input",renderProducts);$("sortSelect").onchange=renderProducts;
+if(configReady()){try{initClient(SUPABASE_URL,SUPABASE_ANON_KEY)}catch(e){console.warn(e)}}loadPublic();
+</script>
+</body>
+</html>
